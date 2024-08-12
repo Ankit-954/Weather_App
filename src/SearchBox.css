@@ -1,0 +1,72 @@
+.search-box {
+    position: relative;
+    width: 100%;
+    margin: 0 0 75px;
+}
+
+.search-box .search-bar {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    appearance: none;
+    background: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0 0 16px 16px;
+    margin-top: -25px;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.1);
+    color: #313131;
+    font-size: 16px;
+    transition: 0.4s ease;
+}
+
+.search-box .search-bar:focus {
+    background-color: #fff;
+    box-shadow: 0 rgba(255, 255, 255, 0.75);
+}
+
+.search-box .search-icon {
+    position: absolute;
+    right: 30px;
+    top: 25%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #313131;
+    font-size: 20px;
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #313131;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.home-button, .about-button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 8px;
+    color: #313131;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover, .about-button:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
