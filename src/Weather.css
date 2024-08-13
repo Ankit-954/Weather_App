@@ -66,6 +66,7 @@ main {
   .contact-button {
     display: inline-block;
     margin-top: 20px;
+    margin-bottom: 25px;
     padding: 10px 20px;
     background-color: rgba(255, 255, 255, 0.5);
     border: none;
