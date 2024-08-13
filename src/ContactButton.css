@@ -1,0 +1,22 @@
+/* ContactButton.css */
+.contact-button {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    padding: 10px 20px;
+    background-color: #0077b5; /* LinkedIn blue color */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-button:hover {
+    background-color: #005582; /* Darker shade for hover effect */
+  }
+  

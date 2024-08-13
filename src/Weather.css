@@ -21,17 +21,24 @@ main {
 }
   
   .welcome-message {
-    display: block;
+    display:block;
     text-align: center;
     color: white;
     margin: 50px auto; /* Centers the message horizontally */
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 15px 30px; /* Reduced padding on the left and right */
+    padding: 18px 30px; /* Reduced padding on the left and right */
     border-radius: 12px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
     max-width: 45%; /* Ensures the message doesn't stretch too wide */
 }
 
+@media (max-width: 480px) {
+  .welcome-message {
+    padding: 12px 15px; 
+    max-width: 95%; 
+    margin: 20px auto;
+  }
+}
 
   .welcome-message h2 {
     font-size: 32px;
@@ -42,6 +49,7 @@ main {
     font-size: 18px;
     font-style: italic;
   }
+
 
   .about-button {
     margin-top: 20px;
@@ -55,8 +63,5 @@ main {
     transition: background-color 0.3s ease;
   }
   
-  .about-button:hover {
-    background-color: rgba(255, 255, 255, 0.7);
-  }
   
   

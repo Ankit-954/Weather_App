@@ -2,7 +2,7 @@ import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './SearchBox.css';
-import About from './About';
+
 
 const SearchBox = ({ query, setQuery, search, handleKeyPress, navigateHome }) => {
     return (
@@ -27,6 +27,12 @@ const SearchBox = ({ query, setQuery, search, handleKeyPress, navigateHome }) =>
                 <Link to="/about">
                     <button className="about-button">
                         About
+                    </button>
+                </Link>
+
+                <Link to="/contact">
+                    <button className="contact-button">
+                        Contact
                     </button>
                 </Link>
             </div>
