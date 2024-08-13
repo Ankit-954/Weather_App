@@ -29,12 +29,6 @@ const SearchBox = ({ query, setQuery, search, handleKeyPress, navigateHome }) =>
                         About
                     </button>
                 </Link>
-
-                <Link to="/contact">
-                    <button className="contact-button">
-                        Contact
-                    </button>
-                </Link>
             </div>
         </div>
     );

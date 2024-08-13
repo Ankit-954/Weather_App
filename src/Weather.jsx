@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import SearchBox from './SearchBox';
 import LocationInfo from './LocationInfo';
@@ -13,7 +12,7 @@ const api = {
 
 const UNSPLASH_ACCESS_KEY = "n6_ALMqNL6q4XnkgNgZum06P9U1O3mn6gI7NMWKJwr4";
 
-const Weather = () => {
+const App = () => {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
   const [backgroundImage, setBackgroundImage] = useState("url('https://cdn.pixabay.com/photo/2024/01/24/10/25/ai-generated-8529315_960_720.png')");
@@ -25,7 +24,7 @@ const Weather = () => {
         .then((result) => {
           if (result.cod === "404") {
             alert("City not found. Please try again.");
-            setQuery(""); // Clear the input box
+            setQuery("");
             return;
           }
 
@@ -45,10 +44,6 @@ const Weather = () => {
             console.error("Error fetching image from Unsplash:", error);
             setBackgroundImage("url('https://cdn.pixabay.com/photo/2024/01/24/10/25/ai-generated-8529315_960_720.png')");
           });
-        })
-        .catch((error) => {
-          console.error("Error fetching weather data:", error);
-          alert("An error occurred. Please try again.");
         });
     }
   };
@@ -87,25 +82,43 @@ const Weather = () => {
       style={{ backgroundImage: backgroundImage }}
     >
       <main>
-        <SearchBox 
-          query={query} 
-          setQuery={setQuery} 
-          search={search} 
-          handleKeyPress={handleKeyPress} 
-          navigateHome={navigateHome} 
+        <SearchBox
+          query={query}
+          setQuery={setQuery}
+          search={search}
+          handleKeyPress={handleKeyPress}
+          navigateHome={navigateHome}
         />
-        {typeof weather.main !== "undefined" ? (
-          <LocationInfo weather={weather} dateBuilder={dateBuilder} />
-        ) : (
+
+        {/* Show Welcome Message if no weather data */}
+        {typeof weather.main === "undefined" && (
           <div className="welcome-message">
-            <h2>Welcome to the Weather App!</h2>
-            <p>Please enter a city name to get the current weather.</p>
+            <h2>Welcome to the Weather App</h2>
+            <p>Enter a city name in the search bar to get started!</p>
+
+            {/* Show Contact Button only on the default page */}
+            <a
+              href="https://www.linkedin.com/in/ankit-kumar-5669042aa/"
+              className="contact-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contact
+            </a>
           </div>
+        )}
+
+        {/* Show weather information if available */}
+        {typeof weather.main !== "undefined" && (
+          <LocationInfo
+            weather={weather}
+            dateBuilder={dateBuilder}
+          />
         )}
       </main>
       <Footer />
     </div>
   );
-};
+}
 
-export default Weather;
+export default App;
